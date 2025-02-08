@@ -1,7 +1,4 @@
 package Exp1;
-
-public class Test {
-    package Exp1;
 import java.util.Scanner;
 import java.timepackage;
 import java.time.Duration;
@@ -73,4 +70,7 @@ public class Test {
       //recursively calls itself applying formula
       return recursiveF(n-1) + n*recursiveF(n-2) - 2*recursiveF(n-3) + 5;
     }
+
+    
+    
 }
