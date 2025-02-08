@@ -27,9 +27,19 @@ public class Compare {
         return result; 
     }
 
-    public static int recursiveF(int input) {
-
-        return 0;
+    public static int recursiveF(int n) {
+      //base case of n = 0, 1, and 2 returns 0, 2, and 4 respectively
+      if(n == 0){
+          return 0;
+      }
+      if(n == 1){
+          return 2;
+      }
+      if(n == 2){
+          return 4;
+      }
+      //recursively calls itself applying formula
+      return recursiveF(n-1) + n*recursiveF(n-2) - 2*recursiveF(n-3) + 5;
     }
 
     public static void main(String[]args) {
