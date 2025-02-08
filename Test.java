@@ -22,12 +22,14 @@ public class Test {
         long endTime2 = System.nanoTime();
         long executionTime2 = (endTime2-starTime2);
 
-        System.out.println("Recurise anwsers");
+        System.out.println("Recursive answers");
         System.out.println(iterativeF(n));
         System.out.println(recursiveF(n));
 
         System.out.println("Time elapsed: " + executionTime + " nanoSeconds");
         System.out.println("Time elapsed: " + executionTime2 + " nanoSeconds");
+
+        sc.close();
     }
     
     public static int iterativeF(int n){
