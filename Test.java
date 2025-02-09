@@ -6,8 +6,9 @@ import java.time.Instant;
 
 
 public class Test {
-
+    public static count;
     public static void main(String[]args) {
+        count = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Input integer for variable n");
         int n = sc.nextInt();
@@ -16,11 +17,14 @@ public class Test {
         iterativeF(n);
         long endTime = System.nanoTime();
         long executionTime = (endTime - starTime);
+        int iterCount = count;
+        count = 0;
 
         long starTime2 = System.nanoTime();
         recursiveF(n);
         long endTime2 = System.nanoTime();
         long executionTime2 = (endTime2-starTime2);
+        int recurCount = count;
 
         System.out.println("Recursive answers");
         System.out.println(iterativeF(n));
@@ -28,6 +32,9 @@ public class Test {
 
         System.out.println("Time elapsed: " + executionTime + " nanoSeconds");
         System.out.println("Time elapsed: " + executionTime2 + " nanoSeconds");
+
+        System.out.println("Iterative Count: " + iterCount);
+        System.out.println("Recursive Count: " + recurCount);
 
         sc.close();
     }
@@ -53,12 +60,14 @@ public class Test {
             last = second;
             second = first;
             first = result;
+            count++;
         }
         return result; 
     }
    
     
     public static int recursiveF(int n) {
+      count++;
       //base case of n = 0, 1, and 2 returns 0, 2, and 4 respectively
       if(n == 0){
           return 0;
